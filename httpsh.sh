@@ -1,5 +1,5 @@
 set -eu
-H=https://exf.infose.cz/
+H=https://exf.infose.cz
 
 i=0
 while :; do
