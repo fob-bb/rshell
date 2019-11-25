@@ -7,5 +7,4 @@ while :; do
                 curl -s "${H}/r-$$-$i-$line"
         done
         i=$(( $i + 1 ))
-        break
 done
